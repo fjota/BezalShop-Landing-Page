@@ -17,7 +17,8 @@
           <span>Logo Here</span>
         </a>
       </div>
-      <nav class="main-menu">
+      <nav class="main-menu" id="sideNav">
+        <span class="menu-toggle-close-icon" id="menu-close">X</span>
         <ul>
           <li>
             <a href="#header">Home</a>
@@ -39,6 +40,11 @@
           </li>
         </ul>
       </nav>
+      <div class="menu-toggle" id="menu-open" >        
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </div>
     <div class="main-banner content-container">
       <div class="aplication-banner-container">
@@ -264,6 +270,23 @@
       <span class="copyright">© 2014, Jaaj • All Rights Reserved</span>
     </div>
   </footer>
+  <!-- Scripts -->
+  <script>
+    let toggle_menu = document.getElementById("sideNav");    
+    let menu_open = document.getElementById("menu-open");    
+    let menu_close = document.getElementById("menu-close");    
+
+    menu_open.addEventListener("click", showMenu);
+    menu_close.addEventListener("click", hideMenu);
+
+    function showMenu() {
+      toggle_menu.classList.add("menu-toggle-open");      
+    }
+
+    function hideMenu() {      
+      toggle_menu.classList.remove("menu-toggle-open");
+    }    
+  </script>
 </body>
 
 </html>
